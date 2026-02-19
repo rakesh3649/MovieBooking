@@ -438,60 +438,63 @@ const Dashboard = () => {
     setLoading(false);
     
     // Initialize cinemas data
-    if (!localStorage.getItem('cinemas')) {
-      const indianCinemas = [
-        {
-          id: "cinema1",
-          name: "PVR Cinemas",
-          location: "Phoenix Marketcity, Mumbai",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema2",
-          name: "INOX Leisure",
-          location: "Select Citywalk, Delhi",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema3",
-          name: "Cinepolis",
-          location: "Viviana Mall, Thane",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema4",
-          name: "Carnival Cinemas",
-          location: "SM Street, Bangalore",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema5",
-          name: "Miraj Cinemas",
-          location: "City Centre, Hyderabad",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema6",
-          name: "Asian Cinemas",
-          location: "Forum Mall, Chennai",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema7",
-          name: "Wave Cinemas",
-          location: "Noida, Delhi NCR",
-          movies: allMovieIds
-        },
-        {
-          id: "cinema8",
-          name: "Fun Cinemas",
-          location: "Koramangala, Bangalore",
-          movies: allMovieIds
-        }
-      ];
-      localStorage.setItem('cinemas', JSON.stringify(indianCinemas));
+    // Initialize cinemas data
+if (!localStorage.getItem('cinemas')) {
+  // Get all movie IDs from the movies array
+  const allMovieIds = initialMovies.map(movie => movie.id);
+  
+  const indianCinemas = [
+    {
+      id: "cinema1",
+      name: "PVR Cinemas",
+      location: "Phoenix Marketcity, Mumbai",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema2",
+      name: "INOX Leisure",
+      location: "Select Citywalk, Delhi",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema3",
+      name: "Cinepolis",
+      location: "Viviana Mall, Thane",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema4",
+      name: "Carnival Cinemas",
+      location: "SM Street, Bangalore",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema5",
+      name: "Miraj Cinemas",
+      location: "City Centre, Hyderabad",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema6",
+      name: "Asian Cinemas",
+      location: "Forum Mall, Chennai",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema7",
+      name: "Wave Cinemas",
+      location: "Noida, Delhi NCR",
+      movies: allMovieIds
+    },
+    {
+      id: "cinema8",
+      name: "Fun Cinemas",
+      location: "Koramangala, Bangalore",
+      movies: allMovieIds
     }
-  }, []);
+  ];
+  localStorage.setItem('cinemas', JSON.stringify(indianCinemas));
+}
 
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
